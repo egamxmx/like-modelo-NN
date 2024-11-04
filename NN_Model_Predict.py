@@ -13,7 +13,7 @@ def obtener_modelo_reciente(prefijo):
 
 # Cargar los datos preprocesados para obtener las últimas entradas
 data = pd.read_csv('data_normalized.csv')
-X = data.drop(columns=['numero', 'fecha']).values
+X = data[['bola-1', 'bola-2', 'bola-3', 'bola-4', 'bola-5', 'bola-6']].values  # Selecciona solo las primeras 6 bolas
 X = X[-1:]  # Seleccionar el último registro para predecir el siguiente sorteo
 
 # Función para cargar el modelo y hacer una predicción
